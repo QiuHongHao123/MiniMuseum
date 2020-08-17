@@ -5,8 +5,8 @@
         <group>
             <file>file:/F:/NetBeanProject/MinicarMuseum/MinicarMuseum-war/web/WEB-INF/web.xml</file>
             <file>file:/F:/NetBeanProject/MinicarMuseum/MinicarMuseum-war/web/login.xhtml</file>
-            <file>file:/F:/NetBeanProject/MinicarMuseum/MinicarMuseum-war/src/java/controler/User.java</file>
             <file>file:/F:/NetBeanProject/MinicarMuseum/MinicarMuseum-war/web/index.xhtml</file>
+            <file>file:/F:/NetBeanProject/MinicarMuseum/MinicarMuseum-war/src/java/controller/User.java</file>
         </group>
     </open-files>
 </project-private>
