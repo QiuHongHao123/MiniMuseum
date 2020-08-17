@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Index</title>
+        <style>
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #000;
+            }
+
+            li {
+                float: left;
+            }
+            
+            li.nav_personal {
+                float: right;
+                
+            }
+            
+            li.nav_title a {
+                color: red;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                padding: 10px;
+                font-size: 20px;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            li a:hover {
+                background-color: #fff;
+                color: #000;
+            }
+            
+            body {
+                background-color: #f3f3f3;
+            }
+            
+            .index_box {
+                margin: 50px auto;
+                width: 600px;
+                background-color: #fff;
+                padding: 20px;
+            }
+            
+            .index_box tr {
+                margin: 5px;
+                display: block;
+            }
+            
+            .index_box th {
+                width: 148px;
+            }
+            
+            .index_box td {
+                width: 148px;
+                text-align: center
+            }
+        </style>
+    </h:head>
+    <h:body>
+        <div>
+            <ul>
+                <li class="nav_title"><a href="#">Mini Car Museum</a></li>
+                <li class="nav_index"><a href="index.xhtml">Index</a></li>
+                <li class="nav_collector"><a href="#">Collector</a></li>
+                <li class="nav_personal"><a href="#">Personal Center</a></li>
+            </ul>
+        </div>
+        <div class="index_box">
+            <table class="car_table">
+            <tr>
+              <th>Car ID</th>
+              <th>Car Name</th>
+              <th>Car Img</th>
+            </tr>
+            <tbody>
+              <ui:repeat var="car" value="#{user.carList}" varStatus="status">
+                <h:panelGroup rendered="#{status.even}">
+                  <tr>
+                    <td>#{car.carId}</td>
+                    <td>#{car.carName}</td>
+                    <td><h:graphicImage value="#{car.carImg}"/></td>
+                    <td><h:button value="View"></h:button></td>
+                  </tr>
+                </h:panelGroup>
+                <h:panelGroup rendered="#{status.odd}">
+                  <tr>
+                    <td>#{car.carId}</td>
+                    <td>#{car.carName}</td>
+                    <td><h:graphicImage value="#{car.carImg}"/></td>
+                    <td><h:button value="View"></h:button></td>
+                  </tr>
+                </h:panelGroup>
+              </ui:repeat>
+            </tbody>
+          </table>
+        </div>      
+    </h:body>
+</html>
+

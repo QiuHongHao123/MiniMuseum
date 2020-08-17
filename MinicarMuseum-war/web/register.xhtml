@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Register</title>
+        <style>
+            body {
+                background-color: #f3f3f3;
+            }
+            
+            img {
+                float: left;
+                width: 450px;
+                display: block;
+                margin-left: 240px;
+                margin-top: 50px;
+                box-shadow: 5px 4px 5px 0px #c7c4c4;
+            }
+            
+            .register_box {
+                background-color: #fff;
+                float: left;
+                width: 450px;
+                padding: 20px;
+                margin: 50px;
+                box-shadow: 5px 4px 5px 0px #c7c4c4;
+            }
+
+        </style>
+    </h:head>
+    <h:body>
+        <h:graphicImage value="resources/images/register.jpg"/>
+        <div class="register_box">
+             <h:form>
+                <h3>Enter your info</h3>
+                <table>
+                    <tr>
+                        <td>Username</td>
+                        <td><h:inputText label="Username">
+                                <f:validateLength minimum="6" maximum="12" />
+                            </h:inputText>
+                        </td>                
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><h:inputSecret label="Password">
+                                <f:validateRegex pattern="((?=.*[a-z]).{6,})" />
+                            </h:inputSecret>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password</td>
+                        <td><h:inputSecret /></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><h:inputText /></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td><h:selectOneRadio >
+                                <f:selectItem itemValue="1" itemLabel="Man" />
+                                <f:selectItem itemValue="2" itemLabel="Woman" />           
+                            </h:selectOneRadio>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td><h:inputText /></td>
+                    </tr>
+                </table>
+                <p><h:commandButton id="btn_submit" value="Submit" action="login.xhtml"/></p>
+            </h:form>
+        </div>       
+    </h:body>
+</html>
+
