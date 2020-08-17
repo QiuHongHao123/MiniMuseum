@@ -234,10 +234,7 @@ exists or setup the property manually. For example like this:
             <property location="${build.dir}" name="dist.ear.dir"/>
             <property name="deploy.on.save" value="${build.deploy.on.save}"/>
         </ant>
-        <ant antfile="${project.MinicarMuseumBootstrap}/build.xml" inheritall="false" target="dist-ear">
-            <property location="${build.dir}" name="dist.ear.dir"/>
-            <property name="deploy.on.save" value="${build.deploy.on.save}"/>
-        </ant>
+       
     </target>
     <target depends="init,deps-jar,deps-j2ee-archive" name="pre-pre-compile"/>
     <target name="pre-compile">
@@ -251,7 +248,6 @@ exists or setup the property manually. For example like this:
     </target>
     <target depends="init,deps-jar,pre-pre-compile,pre-compile" name="-do-compile-deps">
         <copyfiles files="${reference.MinicarMuseum-ejb.dist-ear}" todir="${build.dir}//"/>
-        <copyfiles files="${reference.MinicarMuseumBootstrap.dist-ear}" todir="${build.dir}//"/>
         <copyfiles files="${reference.MinicarMuseum-war.dist-ear}" todir="${build.dir}//"/>
     </target>
     <target name="post-compile">
@@ -331,7 +327,7 @@ exists or setup the property manually. For example like this:
         <!-- Task to deploy to the Access Manager runtime. -->
         <ant antfile="${project.MinicarMuseum-ejb}/build.xml" inheritall="false" target="-run-deploy-am"/>
         <ant antfile="${project.MinicarMuseum-war}/build.xml" inheritall="false" target="-run-deploy-am"/>
-        <ant antfile="${project.MinicarMuseumBootstrap}/build.xml" inheritall="false" target="-run-deploy-am"/>
+      
     </target>
     <target depends="-init-cos,dist-directory-deploy,pre-run-deploy,-pre-nbmodule-run-deploy,-run-deploy-nb,-init-deploy-ant,-deploy-ant,-run-deploy-am,-post-nbmodule-run-deploy,post-run-deploy" name="run-deploy"/>
     <target if="netbeans.home" name="-run-deploy-nb">
@@ -649,10 +645,7 @@ exists or setup the property manually. For example like this:
             <property location="${build.dir}" name="dist.ear.dir"/>
             <property name="deploy.on.save" value="${build.deploy.on.save}"/>
         </ant>
-        <ant antfile="${project.MinicarMuseumBootstrap}/build.xml" inheritall="false" target="clean-ear">
-            <property location="${build.dir}" name="dist.ear.dir"/>
-            <property name="deploy.on.save" value="${build.deploy.on.save}"/>
-        </ant>
+        
     </target>
     <target depends="init" name="do-clean">
         <delete dir="${build.dir}"/>
