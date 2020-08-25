@@ -10,7 +10,7 @@
         <h:form>
             <h3>Enter your username and password</h3>
             <div class="container">
-            <table>
+            <table class="table-bordered ">
                 <tr>
                     <td>Username:</td>
                     <td><h:inputText value="#{user.userName}"/></td>
@@ -20,7 +20,7 @@
                     <td><h:inputSecret value="#{user.password}"/></td>
                 </tr>
             </table>
-            <p><h:commandButton value="Login" action="welcome"/></p>
+            <p><h:commandButton value="Login" action="welcome" class="btn btn-primary"/></p>
             </div>
         </h:form>
     </h:body>
