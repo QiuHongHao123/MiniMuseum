@@ -19,7 +19,7 @@ public interface CollectionRepository {
     public List<Collection> getCollectionsByPersonId(int personId) throws Exception;
     public List<Collection> getCollectionsWithSeries(int personId,String series) throws Exception;
     public void addCollection(Collection collection) throws Exception;
-    public void removeCollection(Collection collection) throws Exception;
+    public void removeCollection(int collectionId) throws Exception;
     public void editCollection(Collection collection) throws Exception;
     
 }

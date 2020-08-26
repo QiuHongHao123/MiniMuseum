@@ -30,6 +30,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Collection.findAll", query = "SELECT c FROM Collection c"),
+    @NamedQuery(name = "Collection.getCollectionsByPersonId", query = "SELECT c FROM Collection c WHERE c.personid= :personId"),
+    @NamedQuery(name = "Collection.getCollectionsWithSeries", query = "SELECT c FROM Collection c WHERE c.personid= :personId AND c.carid.series= :series"),
     @NamedQuery(name = "Collection.findById", query = "SELECT c FROM Collection c WHERE c.id = :id"),
     @NamedQuery(name = "Collection.findByEstablishdate", query = "SELECT c FROM Collection c WHERE c.establishdate = :establishdate")})
 public class Collection implements Serializable {
