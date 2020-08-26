@@ -16,8 +16,8 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface CollectionRepository {
-    public List<Collection> getCollectionByPersonId(int personId) throws Exception;
-    public List<Collection> getCollectionsWithSeirse(int personId,String seirse) throws Exception;
+    public List<Collection> getCollectionsByPersonId(int personId) throws Exception;
+    public List<Collection> getCollectionsWithSeries(int personId,String series) throws Exception;
     public void addCollection(Collection collection) throws Exception;
     public void removeCollection(Collection collection) throws Exception;
     public void editCollection(Collection collection) throws Exception;

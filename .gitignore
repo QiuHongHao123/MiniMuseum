@@ -1,3 +1,7 @@
 /MinicarMuseum-shared/nbproject/private/
 /MinicarMuseum-shared/build/
 /MinicarMuseum-shared/dist/
+/build/
+/MinicarMuseum-war/build/
+/MinicarMuseum-ejb/dist/
+/MinicarMuseum-war/dist/

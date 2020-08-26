@@ -8,6 +8,7 @@ package repository;
 import entities.Person;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import jdk.nashorn.internal.codegen.CompilerConstants;
 
 /**
  *
@@ -31,7 +32,7 @@ public class JPAPersonRepositoryImpl implements PersonRepository{
 
     @Override
     public Person searchPersonByEmailAndPassword(String email, String password) throws Exception {
-       Person person=(Person)entityManager.createNamedQuery("Person.findByEmailAndPassword").setParameter(email, email).setParameter(password, password).getSingleResult();
+       Person person=entityManager.createNamedQuery("Person.findByEmailAndPassword",Person.class).setParameter(email, email).setParameter(password, password).getSingleResult();
        return person;
     }
-}
+ } 

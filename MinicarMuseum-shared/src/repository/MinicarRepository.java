@@ -19,7 +19,7 @@ public interface MinicarRepository {
     public Minicar searchMinicarById(int id)throws Exception;
     public void addMinicar(Minicar minicar)throws Exception;
     public List<Minicar> getAllMinicars() throws Exception;
-    public List<Minicar> getMinicarsBySeires(String Seires) throws Exception;
+    public List<Minicar> getMinicarsBySeries(String Series) throws Exception;
     
     public void removeMinicar(int minicarId) throws Exception;
     public void editMinicar(Minicar minicar) throws Exception;
