@@ -5,3 +5,8 @@
 /MinicarMuseum-war/build/
 /MinicarMuseum-ejb/dist/
 /MinicarMuseum-war/dist/
+/dist/
+/nbproject/private/
+/MinicarMuseum-ejb/nbproject/private/
+/MinicarMuseum-war/nbproject/private/
+/MinicarMuseum-ejb/build/
