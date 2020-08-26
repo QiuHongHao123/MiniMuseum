@@ -31,6 +31,7 @@ public class PersonModel implements Serializable{
     
     private Collection<entities.Collection> collectionCollection;
 
+    public PersonModel(){}
     public PersonModel(String name, String password, String email, Integer age, String gender, Collection<entities.Collection> collectionCollection) {
         this.name = name;
         this.password = password;
