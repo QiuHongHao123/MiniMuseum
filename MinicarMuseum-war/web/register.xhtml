@@ -52,14 +52,14 @@
                 <h3>Enter your info</h3>
                 <div class="form-group">
                     <label for="username">Username</label>
-                    <h:inputText class="form-control" id="username">
+                    <h:inputText class="form-control" id="username" value="#{personModel.name}">
                         <f:validateLength minimum="6" maximum="12" />
                     </h:inputText>
                     <h:message for="username" style="color:red" />
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <h:inputSecret class="form-control" id="password">
+                    <h:inputSecret class="form-control" id="password" value="#{personModel.password}">
                         <f:validateRegex pattern="((?=.*[a-z]).{6,})" />
                     </h:inputSecret>
                     <h:message for="password" style="color:red" />
@@ -71,21 +71,21 @@
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <h:inputText class="form-control" id="email" required="true">
+                    <h:inputText class="form-control" id="email" required="true" value="#{personModel.email}">
                     </h:inputText>
                 </div>
                 <div class="form-group">
                     <label for="gender">Gender</label>
-                    <h:inputText class="form-control" id="gender">
+                    <h:inputText class="form-control" id="gender" value="#{personModel.gender}">
                     </h:inputText>
                 </div>
                 <div class="form-group">
                     <label for="age">Age</label>
-                    <h:inputText class="form-control" id="age">
+                    <h:inputText class="form-control" id="age" value="#{personModel.age}">
                     </h:inputText>
                 </div>
                 <div class="form-group">
-                    <h:commandButton class="btn btn-default" type="submit" value="Submit" action="login.xhtml"/>
+                    <h:commandButton class="btn btn-default" type="submit" value="Submit" action="#{personController.register(personModel)}"/>
                 </div>
             </h:form>
         </div>       

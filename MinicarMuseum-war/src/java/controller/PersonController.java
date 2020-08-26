@@ -18,8 +18,8 @@ import mbeans.PersonManagedBean;
  *
  * @author 31588
  */
-@RequestScoped
 @Named("personController")
+@RequestScoped
 public class PersonController {
     @ManagedProperty(value ="#{personManagedBean}")
     PersonManagedBean personManagedBean;
