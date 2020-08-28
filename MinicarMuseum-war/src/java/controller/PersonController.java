@@ -49,8 +49,8 @@ public class PersonController {
             personManagedBean.addPerson(person);
         }
         catch(Exception ex){
-        }
-        
+        }    
     }
+    
     
 }

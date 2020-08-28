@@ -31,6 +31,7 @@ public class PersonModel implements Serializable{
     
     private Collection<entities.Collection> collectionCollection;
 
+
     public PersonModel(){}
     public PersonModel(String name, String password, String email, Integer age, String gender, Collection<entities.Collection> collectionCollection) {
         this.name = name;
@@ -38,9 +39,16 @@ public class PersonModel implements Serializable{
         this.email = email;
         this.age = age;
         this.gender = gender;
-        this.collectionCollection = collectionCollection;
+        
     }
-    
+    public PersonModel(String name, String password, String email, Integer age, String gender) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.age = age;
+        this.gender = gender;
+        
+    }
     public int getPersonModelId() {
         return personModelId;
     }
@@ -92,7 +100,7 @@ public class PersonModel implements Serializable{
     public Collection<entities.Collection> getCollectionCollection() {
         return collectionCollection;
     }
-
+   
     public void setCollectionCollection(Collection<entities.Collection> collectionCollection) {
         this.collectionCollection = collectionCollection;
     }
