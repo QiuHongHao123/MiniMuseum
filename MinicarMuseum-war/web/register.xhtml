@@ -84,8 +84,9 @@
                     <h:inputText class="form-control" id="age" value="#{personModel.age}">
                     </h:inputText>
                 </div>
-                <div class="form-group">
-                    <h:commandButton class="btn btn-default" type="submit" value="Submit" action="#{personController.register(personModel)}"/>
+                <div class="form-group">            
+                    <h:commandButton class="btn btn-default" value="Submit" action="#{personController.register(personModel)}" class="btn btn-primary" />
+                    <h:commandButton class="btn btn-default" value="Close" action="login.xhtml"/>
                 </div>
             </h:form>
         </div>       

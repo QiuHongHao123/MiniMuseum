@@ -30,6 +30,18 @@ public class CollectionManagedBean implements Serializable{
      */
     public CollectionManagedBean() {
     }
+    
+    public List<Collection> getAllCollections(){
+        try{
+            List<Collection> collections = collectionReository.getAllCollections();
+            return collections;
+        }
+        catch (Exception ex) {
+            Logger.getLogger(CollectionManagedBean.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
     public List<Collection> getCollectionsByPersonId(int personId){
         try{
             return collectionReository.getCollectionsByPersonId(personId);

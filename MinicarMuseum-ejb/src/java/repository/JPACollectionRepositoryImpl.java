@@ -17,7 +17,12 @@ import javax.persistence.PersistenceContext;
 public class JPACollectionRepositoryImpl implements CollectionRepository{
     @PersistenceContext
     private EntityManager entityManager;
-
+    
+    @Override
+    public List<Collection> getAllCollections() throws Exception {
+        return entityManager.createNamedQuery("Collection.findAll",Collection.class).getResultList();
+    }
+    
     @Override
     public List<Collection> getCollectionsByPersonId(int personId) throws Exception {
         return entityManager.createNamedQuery("Collection.getCollectionsByPersonId",Collection.class).setParameter(personId, personId).getResultList();

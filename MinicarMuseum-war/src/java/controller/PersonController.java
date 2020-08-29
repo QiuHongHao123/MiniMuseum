@@ -7,11 +7,14 @@ package controller;
 
 import Model.PersonModel;
 import entities.Person;
+import java.io.IOException;
 import javax.el.ELContext;
 import javax.enterprise.context.RequestScoped;
 import javax.faces.bean.ManagedProperty;
+import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
+import javax.servlet.http.HttpSession;
 import mbeans.PersonManagedBean;
 
 /**
@@ -38,6 +41,7 @@ public class PersonController {
         personManagedBean = (PersonManagedBean) FacesContext.getCurrentInstance().getApplication()
                 .getELResolver().getValue(elContext, null, "personManagedBean");
     }
+    
     public void register(PersonModel personModel){
         try{
             Person  person = new Person();
@@ -52,5 +56,20 @@ public class PersonController {
         }    
     }
     
+    public void login(String email, String password) throws IOException {
+        ExternalContext exContext = FacesContext.getCurrentInstance().getExternalContext();
+        
+        Person person = personManagedBean.searchPersonByEmailAndPassword(email, password);
+        
+        if(person != null) {
+            HttpSession session = (HttpSession)exContext.getSession(true);
+            session.setAttribute("useremail", email);
+            session.setAttribute("user", person);
+            exContext.redirect("index.html");
+        }else {
+            exContext.redirect("login.html");
+        }
+        
+    }
     
 }
